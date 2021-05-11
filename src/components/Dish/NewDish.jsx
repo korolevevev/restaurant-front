@@ -1,4 +1,3 @@
-import {LoadRing} from "./LoadRing";
 import {useState, useEffect} from "react";
 import {useHistory} from "react-router-dom";
 import axios from "axios";
@@ -22,9 +21,8 @@ export const NewDish = ({state, dispatch}) => {
         alert("Блюдо добавлено")
         history.push("/dishes")
     }
-    const validate = formState.model && formState.color && formState.category && formState.power &&
-        formState.price && formState.year && formState.showroom_id.id &&
-        formState.year > 1900 && formState.year <= 2021 && formState.power > 0 && formState.power <= 3000
+    const validate = formState.dish && formState.category && formState.description && formState.calories &&
+        formState.weight && formState.price && formState.allergic
     return (<div className={"row justify-content-center mt-5"}>
         <h2 className="row text-white justify-content-center">Добавление нового блюда в меню</h2>
         <div className="row justify-content-center">

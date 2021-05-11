@@ -1,9 +1,8 @@
 import {useEffect, useState} from "react";
-import {LoadRing} from "./LoadRing";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 
-export const EditDish = ({state, dataCar, dispatch}) => {
+export const EditDish = ({state, dataDish, dispatch}) => {
     let history = useHistory();
     const [formState, setFormState] = useState({
         dish: "",
@@ -15,26 +14,22 @@ export const EditDish = ({state, dataCar, dispatch}) => {
         allergic: false
     });
     useEffect(() => {
-        if (dataCar) {
-            setFormState(dataCar)
+        if (dataDish) {
+            setFormState(dataDish)
         } else {
             history.push("/dishes")
         }
-    }, [dataCar, history])
+    }, [dataDish, history])
     const onUpdate = () => {
         axios.put("http://localhost:3000/api/dishes/update", formState).then(response => {
             console.log(formState)
             dispatch({type: "ADD_DATA_DISH", payload: response.data})
         });
-        alert("Данные о блюде обновлены!")
+        alert("Данные о блюде обновлены")
         history.push("/dishes")
     }
-    if (!dataCar) {
-        return <LoadRing/>
-    }
-    const validate = formState.model && formState.color && formState.category && formState.power &&
-        formState.price && formState.year &&
-        formState.year > 1900 && formState.year <= 2021 && formState.power > 0 && formState.power <= 3000
+    const validate = formState.dish && formState.category && formState.description && formState.calories &&
+        formState.weight && formState.price && formState.allergic
     return (<div className={"row justify-content-center mt-5"}>
             <h2 className="row text-white justify-content-center">Редактировать блюдо</h2>
             <div className="row justify-content-center">
@@ -60,7 +55,7 @@ export const EditDish = ({state, dataCar, dispatch}) => {
             <div className="row mt-2 justify-content-center">
                 <div className=" col-4 form-group">
                     <label htmlFor="color">Описание</label>
-                    <input type="text" className="form-control mt-1" id="color" placeholder="красный борщ"
+                    <input type="text" className="form-control mt-1" id="color" placeholder="Брауни"
                            value={formState.description}
                            onChange={e => {
                                setFormState({...formState, description: e.target.value})

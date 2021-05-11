@@ -10,7 +10,7 @@ export const DishTable = ({el, dispatch}) => {
     }
     const onCreate = () => {
         dispatch({type: "ADD_DATA_TO_CREATE_PAGE", payload: {...el}})
-        history.push('/carupdate')
+        history.push('/newdish')
     }
     return (<tr>
         <td>{el.dish}</td>

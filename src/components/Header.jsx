@@ -11,7 +11,7 @@ export const Header = ({setAuth}) => {
                         <NavLink className={"nav-link"} to={"/dishes"}>Меню</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className={"nav-link"} to={"/carshowroom"}>Заказы</NavLink>
+                        <NavLink className={"nav-link"} to={"/orders"}>Заказы</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className={"nav-link"} to={"/info"}>Об авторе</NavLink>

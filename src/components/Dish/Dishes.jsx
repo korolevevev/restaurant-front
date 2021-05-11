@@ -1,21 +1,14 @@
 import {useState, useEffect} from 'react';
-import {LoadRing} from "./LoadRing";
 import {DishTable} from "./DishTable";
 import {NavLink} from "react-router-dom";
 
-export const Dishes = ({state, dispatch, onDelete, showrooms}) => {
-    const [loader, setLoader] = useState(true)
+export const Dishes = ({state, dispatch, onDelete}) => {
     const [masters, setMasters] = useState();
     const [bool, setBool] = useState(false);
     useEffect(() => {
             setMasters(state)
         },
         [state])
-    if (state) {
-        setTimeout(() => {
-            setLoader(false)
-        }, 500)
-    }
     let updateMastersList = (e) => {
         const pattern = e.target.value;
 

@@ -1,13 +1,12 @@
-import axios from "axios";
 import {useHistory} from "react-router";
 export const OrderTable = ({el,dispatch}) => {
     let history = useHistory();
-    const onShowRoom = () => {
+    const onOrder = () => {
         history.push(`/bills`)
         dispatch({type: 'ADD_DATA_TO_BILLS', payload: el});
     }
     console.log(el);
-    return (<tr onClick={onShowRoom}>
+    return (<tr onClick={onOrder}>
         <td>{el.table_id}</td>
         <td>{el.waiter_name}</td>
         <td>{el.customer_name}</td>

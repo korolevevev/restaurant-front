@@ -3,7 +3,7 @@ import {useHistory} from "react-router";
 function Bills({el}) {
     let history = useHistory();
     if(!el.dishList){
-        history.push('/carshowroom')
+        history.push('/bill')
         alert("Заказ пуст")
         return null
     }

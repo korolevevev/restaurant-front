@@ -13,19 +13,14 @@ export const NewOrder = ({state, dispatch}) => {
         waiter_surname: ""
 
     });
-
-    const onCreateShowRoom = () => {
+    const onNewOrder = () => {
         axios.post("http://localhost:3000/api/orders", formState).then(response => {
             dispatch({type: "ADD_DATA_ORDERS", payload: response.data})
         });
         alert("Заказ добавлен!")
-        history.push("/carshowroom")
+        history.push("/orders")
     }
-    let validatePhone = (phone) => {
-        let regex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-        return regex.test(phone);
-    }
-    // const validate = formState.name && formState.address && formState.phone && formState.workingHours && validatePhone(formState.phone)
+
     return (<div className={"row justify-content-center mt-5"}>
         <h2 className="row text-white justify-content-center">Добавить новый заказ</h2>
         <div className="row justify-content-center">
@@ -88,7 +83,7 @@ export const NewOrder = ({state, dispatch}) => {
         </div>
 
         <div className="row mt-5 justify-content-center">
-            <button onClick={onCreateShowRoom} type="button"
+            <button onClick={onNewOrder} type="button"
                     className="btn btn-light col-3 btn-sm">Добавить новый заказ
             </button>
         </div>
