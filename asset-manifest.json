@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/restaurant-front/static/css/main.d58c22cf.chunk.css",
-    "main.js": "/restaurant-front/static/js/main.c1f56ffa.chunk.js",
-    "main.js.map": "/restaurant-front/static/js/main.c1f56ffa.chunk.js.map",
+    "main.js": "/restaurant-front/static/js/main.30a71592.chunk.js",
+    "main.js.map": "/restaurant-front/static/js/main.30a71592.chunk.js.map",
     "runtime-main.js": "/restaurant-front/static/js/runtime-main.d0e71161.js",
     "runtime-main.js.map": "/restaurant-front/static/js/runtime-main.d0e71161.js.map",
     "static/js/2.566c9324.chunk.js": "/restaurant-front/static/js/2.566c9324.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d0e71161.js",
     "static/js/2.566c9324.chunk.js",
     "static/css/main.d58c22cf.chunk.css",
-    "static/js/main.c1f56ffa.chunk.js"
+    "static/js/main.30a71592.chunk.js"
   ]
 }
